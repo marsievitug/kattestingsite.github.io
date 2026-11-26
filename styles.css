@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Intel+One+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: #f7e9ef00;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    font-family: 'Manrope', sans-serif;
+}
+
+.diary {
+    width: min(100%, 768px);
+    background: #e2a9c300;
+    overflow: hidden;
+}
+
+/* Main diary image */
+
+.diary-content {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 768 / 470;
+    background-image: url("https://file.garden/atCSmvzqYsI2sRSL/kat/image%2018.png");
+    background-size: contain;
+    background-position: 30% 20px;
+    background-repeat: no-repeat;
+}
+
+/* Hint paper */
+
+.hint-paper {
+    position: absolute;
+
+    left: 12%;
+    top: 21%;
+
+    width: 37%;
+    height: 42%;
+
+    background-image: url("https://file.garden/atCSmvzqYsI2sRSL/kat/image%2016.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    transform: rotate(-9deg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+    font-family: 'Intel One Mono', monospace;
+    color: #111;
+}
+
+.hint-title {
+    transform: rotate(-7deg);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.hint-text {
+    transform: translateX(10px) rotate(-7deg);
+    font-size: 16px;
+    line-height: 1.1;
+}
+
+/* Password section */
+
+.password-paper {
+    position: absolute;
+
+    left: 26%;
+    top: -8%;
+
+    width: 65%;
+    height: 120%;
+
+    background-image: url("https://file.garden/atCSmvzqYsI2sRSL/kat/image%2019.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    transform: rotate(1deg);
+    transform-origin: center;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* Slanted passkey */
+.password-section {
+    position: absolute;
+
+    left: 42%;
+    top: 12%;
+
+    width: 35%;
+    height: 84%;
+
+    padding: 4% 3%;
+
+    background: none;
+
+    transform: rotate(9deg);
+    transform-origin: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 4;
+}
+
+.instruction {
+    position: relative;
+    top: -8px;  
+    left: -30px;
+    width: 100%;
+    text-align: center;
+
+    font-family: 'Intel One Mono', monospace;
+    font-size: 16px;
+    white-space: nowrap;
+    transform: rotate(0deg);
+    margin-bottom: 5%;
+}
+
+/* Password input */
+
+#passwordForm {
+    width: 100%;
+}
+
+.password-input {
+    width: 100%;
+    height: 12%;
+
+    min-height: 35px;
+
+    border: 2px solid #d9b7c7;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    box-shadow:
+        inset 0 2px 5px rgba(0, 0, 0, 0.08),
+        0 2px 3px rgba(255, 255, 255, 0.8);
+
+    font-family: 'Intel One Mono', monospace;
+    font-size: clamp(16px, 2.5vw, 22px);
+    letter-spacing: 5px;
+
+    text-align: center;
+    color: #222;
+
+    outline: none;
+}
+
+.password-input:focus {
+    border-color: #c77f9d;
+}
+
+/* Error / success message */
+
+.message {
+    height: 20px;
+    margin-top: 4px;
+
+    text-align: center;
+    font-size: clamp(8px, 1.2vw, 11px);
+    color: #a33b63;
+}
+
+/* Keypad */
+
+.keypad {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin-top: 2%;
+}
+
+/* White raised keypad buttons */
+.key {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    border: 1px solid #e8dce2;
+    border-radius: 5px;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #fffafd 65%,
+        #f5edf2 100%
+    );
+
+    box-shadow:
+        0 4px 0 #d9cbd2,
+        0 5px 8px rgba(100, 65, 80, 0.18),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9);
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #b9b8b8;
+    font-family: 'Intel One Mono', monospace;
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        background 0.12s ease;
+}
+
+/* Numbers */
+.key span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: clamp(17px, 3vw, 28px);
+    line-height: 1;
+}
+
+.key small {
+    font-size: clamp(5px, 0.9vw, 8px);
+    margin-top: 3px;
+}
+
+/* Hover */
+.key:hover {
+    background: #fff5fa;
+
+    box-shadow:
+        0 5px 0 #d9cbd2,
+        0 7px 10px rgba(100, 65, 80, 0.2),
+        inset 0 1px 2px #ffffff;
+
+    transform: translateY(-2px);
+}
+
+/* Pressed button */
+.key:active {
+    transform: translateY(3px);
+
+    box-shadow:
+        0 1px 0 #d9cbd2,
+        0 2px 4px rgba(100, 65, 80, 0.15),
+        inset 0 2px 4px rgba(100, 65, 80, 0.08);
+}
+
+
+/* Heart keys */
+
+.heart-key span {
+    color: #f5b4cb;
+    font-family: Arial, sans-serif;
+    font-size: clamp(18px, 3vw, 28px);
+}
+
+/* Clear and backspace */
+
+.keypad-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.keypad-actions button {
+    border: 1px solid #d6a3b9;
+    border-radius: 6px;
+    padding: 4px 10px;
+
+    background: #fff0f6;
+    color: #87556b;
+
+    font-family: 'Intel One Mono', monospace;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+/* Decorative key */
+
+.decorative-key {
+    position: absolute;
+    left: 76%;
+    top: 32%;
+    width: 50%; /* increase this to make the key bigger */
+    height: auto;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 6;
+}
+
+/* Footer */
+
+footer {
+    display: none;
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    .diary {
+        width: 100%;
+    }
+
+    .diary-content {
+        aspect-ratio: 768 / 470;
+    }
+
+    .password-section {
+        padding: 3%;
+    }
+
+    .keypad {
+        gap: 2px;
+    }
+
+    .key {
+        min-width: 0;
+    }
+
+    .password-input {
+        min-height: 20px;
+        border-radius: 7px;
+    }
+
+    .keypad-actions {
+        margin-top: 3px;
+    }
+
+    .keypad-actions button {
+        padding: 2px 5px;
+        font-size: 8px;
+    }
+}
+
+.decorative-key {
+    position: absolute;
+    left: 68%;
+    top: 32%;
+    width: 15%;
+    height: auto;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 5;
+}
+
+.diary-content img.decorative-key {
+    width: 30% !important;
+    max-width: none !important;
+    height: auto !important;
+}

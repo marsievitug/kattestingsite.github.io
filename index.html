@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Diary | Password Protected</title>
+
+    <link rel="stylesheet" href="../LOLL/styles.css">
+</head>
+
+<body>
+
+    <main class="diary">
+
+        <!-- Diary background -->
+        <div class="diary-content">
+
+            <!-- Hint paper -->
+            <div class="hint-paper">
+                <p class="hint-title">hint:</p>
+                <p class="hint-text">
+                    2 days after<br>
+                    People's Power
+                </p>
+            </div>
+
+            <img
+    src="https://file.garden/atCSmvzqYsI2sRSL/kat/image%2019.png"
+    class="password-paper"
+    alt=""
+>
+
+            <!-- Password section -->
+            <section class="password-section">
+
+                <p class="instruction">
+                    enter password to view diary !
+                </p>
+
+                <form id="passwordForm">
+
+                    <input
+                        type="password"
+                        id="passwordInput"
+                        class="password-input"
+                        autocomplete="off"
+                        readonly
+                        aria-label="Diary password"
+                    >
+
+                    <p id="message" class="message" aria-live="polite"></p>
+
+                    <!-- Keypad -->
+                    <div class="keypad">
+
+                        <button type="button" class="key" data-key="1">
+                            <span>1</span>
+                        </button>
+
+                        <button type="button" class="key" data-key="2">
+                            <span>2<small>ABC</small></span>
+                        </button>
+
+                        <button type="button" class="key" data-key="3">
+                            <span>3<small>DEF</small></span>
+                        </button>
+
+                        <button type="button" class="key heart-key" data-key="4">
+                            <span>♥</span>
+                        </button>
+
+                        <button type="button" class="key" data-key="4">
+                            <span>4<small>GHI</small></span>
+                        </button>
+
+                        <button type="button" class="key" data-key="5">
+                            <span>5<small>JKL</small></span>
+                        </button>
+
+                        <button type="button" class="key" data-key="6">
+                            <span>6<small>MNO</small></span>
+                        </button>
+
+                        <button type="button" class="key heart-key" data-key="4">
+                            <span>♥</span>
+                        </button>
+
+                        <button type="button" class="key" data-key="7">
+                            <span>7<small>PQRS</small></span>
+                        </button>
+
+                        <button type="button" class="key" data-key="8">
+                            <span>8<small>TUV</small></span>
+                        </button>
+
+                        <button type="button" class="key" data-key="9">
+                            <span>9<small>WXYZ</small></span>
+                        </button>
+
+                        <button type="button" class="key heart-key" data-key="4">
+                            <span>♥</span>
+                        </button>
+
+                        <button type="button" class="key" data-key="*">
+                            <span>*</span>
+                        </button>
+
+                        <button type="button" class="key" data-key="0">
+                            <span>0</span>
+                        </button>
+
+                        <button type="button" class="key" data-key="#">
+                            <span>#</span>
+                        </button>
+
+                        <button type="button" class="key heart-key" data-key="4">
+                            <span>♥</span>
+                        </button>
+
+                    </div>
+
+                    <div class="keypad-actions">
+                        <button type="button" id="clearButton">Clear</button>
+                        <button type="button" id="backspaceButton">⌫</button>
+                    </div>
+
+                </form>
+
+            </section>
+
+            <!-- Decorative key -->
+            <img
+                src="https://file.garden/atCSmvzqYsI2sRSL/kat/image%2017.png"
+                class="decorative-key"
+                alt=""
+            >
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
