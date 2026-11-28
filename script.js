@@ -1,4 +1,4 @@
-const CORRECT_PASSWORD = "0224";
+const CORRECT_PASSWORD = "0227";
 
 const passwordInput = document.getElementById("passwordInput");
 const message = document.getElementById("message");

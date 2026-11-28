@@ -18,7 +18,7 @@ body {
 }
 
 .diary {
-    width: min(100%, 768px);
+    width: min(100%, 1000px);
     background: #e2a9c300;
     overflow: hidden;
 }
@@ -63,13 +63,13 @@ body {
 
 .hint-title {
     transform: rotate(-7deg);
-    font-size: 16px;
+    font-size: 19px;
     margin-bottom: 8px;
 }
 
 .hint-text {
     transform: translateX(10px) rotate(-7deg);
-    font-size: 16px;
+    font-size: 19px;
     line-height: 1.1;
 }
 
@@ -122,13 +122,13 @@ body {
 
 .instruction {
     position: relative;
-    top: -8px;  
+    top: -1px;  
     left: -30px;
     width: 100%;
     text-align: center;
 
     font-family: 'Intel One Mono', monospace;
-    font-size: 16px;
+    font-size: 19px;
     white-space: nowrap;
     transform: rotate(0deg);
     margin-bottom: 5%;
@@ -142,7 +142,7 @@ body {
 
 .password-input {
     width: 100%;
-    height: 12%;
+    height: 15%;
 
     min-height: 35px;
 
@@ -218,7 +218,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    color: #b9b8b8;
+    color: #8b8585;
     font-family: 'Intel One Mono', monospace;
 
     transition:
@@ -279,19 +279,19 @@ body {
     display: flex;
     justify-content: flex-end;
     gap: 8px;
-    margin-top: 8px;
+    margin-top: 15px !important;
 }
 
 .keypad-actions button {
     border: 1px solid #d6a3b9;
-    border-radius: 6px;
-    padding: 4px 10px;
+    border-radius: 8px;
+    padding: 8px 16px;
 
     background: #fff0f6;
     color: #87556b;
 
     font-family: 'Intel One Mono', monospace;
-    font-size: 11px;
+    font-size: 17px !important; 
     cursor: pointer;
 }
 
@@ -299,9 +299,9 @@ body {
 
 .decorative-key {
     position: absolute;
-    left: 76%;
+    left: 63% !important;
     top: 32%;
-    width: 50%; /* increase this to make the key bigger */
+    width: 70%; /* increase this to make the key bigger */
     height: auto;
     cursor: pointer;
     pointer-events: auto;
@@ -317,10 +317,11 @@ footer {
 /* Mobile */
 
 @media (max-width: 500px) {
-
     .diary {
         width: 100%;
+        max-width: 600px;
     }
+}
 
     .diary-content {
         aspect-ratio: 768 / 470;
@@ -351,7 +352,7 @@ footer {
         padding: 2px 5px;
         font-size: 8px;
     }
-}
+
 
 .decorative-key {
     position: absolute;
